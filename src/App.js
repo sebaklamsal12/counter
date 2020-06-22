@@ -16,11 +16,8 @@ class Counter extends Component {
     render() {
         return ( <
             div className = "container" >
-
-
-
             <
-            div classNAme = "navbar" > Counter.js < /div>    <
+            div className = "navbar" > Counter.js < /div>    <
             div className = "counter" >
 
 
@@ -30,8 +27,9 @@ class Counter extends Component {
             h1 > { this.state.count } < /h1>     <
             button type = "button"
             onClick = { this.increment } > increment < /button>    <
-            button type = "button" > Decrement < /button>   < <
-            div >
+            button type = "button"
+            onClick = { this.decrement } > Decrement < /button>    <
+            /div>
 
 
             <
@@ -41,5 +39,4 @@ class Counter extends Component {
 
 };
 
-exportc
-default Counter;
+export default Counter;
