@@ -4,13 +4,36 @@ class Counter extends Component {
         super();
         this.state = {
             count: 0,
+            doubleCount: false,
         };
     }
     increment = () => {
-        this.setState({
-            count: this.state.count + 1
-        })
+        if (this.state.count < 20) {
+            this.setState({
+                count: this.state.count + 1
+            })
+        }
+    }
+    decrement = () => {
+        if (this.state.count > 0) {
+            this.setState({
+                count: this.state.count - 1
 
+            })
+        }
+    }
+    clear = () => {
+        this.setState({
+            count: 0,
+        })
+    }
+    double = () => {
+        if (this.state.doubleCount) {
+            this.setState({
+                coubleCount: true,
+            })
+            console.log(this.state.doubleCount)
+        }
     }
 
     render() {
@@ -28,15 +51,21 @@ class Counter extends Component {
             button type = "button"
             onClick = { this.increment } > increment < /button>    <
             button type = "button"
-            onClick = { this.decrement } > Decrement < /button>    <
-            /div>
+            onClick = { this.decrement } > Decrement < /button>  <
+            button type = "button"
+            onClick = { this.clear } > clear < /button> <
+            button type = "button"
+            onClick = { this.double } > {
+                this.state.doubleCount ? "Double Count" : 'Single Count" } <
+                    /button>  < /
+                div >
 
 
-            <
-            /div>
-        );
+                <
+                /div>
+            );
+        };
+
     };
 
-};
-
-export default Counter;
+    export default Counter;
